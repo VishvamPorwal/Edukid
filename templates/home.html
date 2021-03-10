@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<div class="alert alert-warning" role="alert">
+    {{msg}}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<h2>Hello, {{name.capitalize()}}</h2>
+<img src="{{space_image}}" style="width:100%;height:60%" alt="Picture of the day">
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Phrase matcher</h1>
+    <p>Press the button then say the phrase to test the recognition.</p>
+
+    <button class="speech btn btn-warning" style="padding: 1%; font-size: 100%;">Start test  <i class="fa fa-microphone"></i></button>
+
+    <div>
+        <p class="phrase">Text</p>
+        <p class="result">Right or wrong?</p>
+        <p class="output">...diagnostic messages</p>
+    </div>
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+<style>
+    .button_next {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button_next span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button_next span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button_next:hover span {
+  padding-right: 25px;
+}
+
+.button_next:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+    <br>
+    <h1><b>{{txt}}</b></h1>
+    <img src={{image}} style="width: 50%; height: 50%" alt="not found (press 'Next')">
+    <audio controls autoplay>
+        <source src="{{url}}" type="audio/ogg">
+        <source src="{{url}}"
+            type="audio/mpeg">
+    </audio>
+    <button class="button_next" style="vertical-align:middle" onClick="window.location.reload();"><span>Next </span></button>
+    
+
+    
+    <br><br>
+    
+
+{% endblock %}
